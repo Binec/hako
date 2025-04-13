@@ -131,7 +131,19 @@ form{
 footer{
   background-color: #D9D9D9;
   padding: 30px;
+  text-align:  center;
+}
+#footer-content{
   justify-content: space-between;
+}
+#legales{
+  text-align: left;
+  margin-top: 15px;
+}
+#marca{
+  margin-top: 15px;
+  color: white;
+  background-color: coral;
 }
 /*Slider*/
 .slider-container {
