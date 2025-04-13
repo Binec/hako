@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Noto Sans JP", sans-serif ;
+}
+
+.noto-sans-jp-1 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+.d-f-c{
+    display: flex;
+    flex-direction: column;
+}
+.d-f-r{
+    display: flex;
+    flex-direction: row;
+}
+#m-container{
+    max-width: 1450px;
+    margin: auto;
+    align-items: center;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.m-option{
+    padding: 20px;
+}
+#menu{
+    display: flex;
+}
+#ATF{
+    color: white;
+    background: #1B2732;
+    background: -webkit-linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(48, 69, 89, 1) 100%);
+    background: -moz-linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(48, 69, 89, 1) 100%);
+    background: linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(48, 69, 89, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(
+    startColorstr="#000000",
+    endColorstr="#304559",
+    GradientType=0
+    );
+    height: 100vh;
+    width: ;
+}
+#atf-content{
+
+}
+#col1{
+    width: 50%;
+    margin: auto 0;
+    text-align: center;
+}
+#col2{
+    width: 50%;
+    vertical-align: center;
+    align-items: center;
+    margin-top: 200px;
+}
+#btn{
+    margin-top: 20px;
+    border: ;
+    border-radius: 8pt;
+    border: 1px solid #ffffff;
+    width: 250px;
+    height: 50px;
+}
