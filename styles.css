@@ -21,14 +21,16 @@ body{
     flex-direction: row;
 }
 #m-container{
-    max-width: 1450px;
-    margin: auto;
+    max-width: 1920px;
     align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 header{
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
+    padding: 20px;
 }
 .m-option{
     padding: 20px;
@@ -72,3 +74,152 @@ header{
     width: 250px;
     height: 50px;
 }
+#quienesomos{
+    position: relative;
+    height: 100vh;
+}
+#bg-img{
+    position: absolute;
+}
+.columns{
+    
+}
+#col-1{
+    width: 50%;
+    margin-top: 30%;
+    text-align: center;
+}
+#col-2{
+    width: 50%;
+    margin-top: 30%;
+}
+#productos{
+    background-color: #F5F5F5;
+    height: 100vh;
+}
+#d-input{
+    position:relative;
+}
+#message{
+    height: 100px;
+}
+input{
+    background-color: #F5F5F5;
+    height:35px;
+    width: 530px;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    border-radius: 5pt;
+}
+#inptu-icon{
+    position: absolute;
+    padding-top: 8px;
+    padding-left: 10px;
+}
+#btn-enviar{
+    background-color: #EC6F43;
+    width: 100%;
+}
+.col-2-form{
+   margin-top: 10%;
+}
+form{
+    background-color: #D9D9D9;
+    padding:30px;
+    border-radius: 10px;
+}
+footer{
+  background-color: #D9D9D9;
+  padding: 30px;
+  justify-content: space-between;
+}
+/*Slider*/
+.slider-container {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 8px;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 500%;
+  }
+
+  .slide {
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide img {
+    max-width: 100%;
+    border-radius: 6px;
+  }
+
+  .text-column {
+    padding: 20px;
+  }
+
+  .text-column h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .slide {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .text-column {
+      padding: 10px 0 0;
+    }
+  }
+
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  .prev { left: 10px; }
+  .next { right: 10px; }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .dot.active {
+    background-color: #333;
+  }
