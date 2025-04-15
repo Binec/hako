@@ -92,7 +92,13 @@
                     <div class="slides" id="slides">
                       <div class="slide">
                         <img id="img-slider" src="assets/caja2 1.jpg" alt="Slide 1">
-                        <div class="slide-text">Texto de la diapositiva 1</div>
+                        <div class="slide-text">
+                            <h2>Caja 1</h2>
+                            <h3>Lorem Ipsum</h3>
+                            <p></p>
+                            <button class="leer-mas-btn" onclick="toggleText(0)">Leer más</button>
+                            <div class="extra-text" id="extra-0">Este es el texto completo de la diapositiva 1. Aquí se puede mostrar más información detallada.</div>
+                        </div>
                       </div>
                       <div class="slide">
                         <img src="assets/" alt="Slide 2">
@@ -244,6 +250,15 @@
       currentIndex = (currentIndex + 1) % totalSlides;
       updateSlider();
     }, 10000);
+
+    function toggleText(index) {
+      const textDiv = document.getElementById(`extra-${index}`);
+      if (textDiv.style.display === 'block') {
+        textDiv.style.display = 'none';
+      } else {
+        textDiv.style.display = 'block';
+      }
+    }
       </script>
 </body>
 </html>
