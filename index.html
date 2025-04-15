@@ -18,31 +18,52 @@
                     <img src="assets/hako-negativo1.svg" alt="">
                 </div>
                 <div id="menu" class="d-f-r">
-                    <p class="m-option">Conócenos</p>
-                    <p class="m-option">Productos</p>
-                    <p class="m-option">Contacto</p>
+                    <a href=""><p class="m-option">Conócenos</p></a>
+                    <a href=""><p class="m-option">Productos</p></a>
+                    <a href=""><p class="m-option">Contacto</p></a>
                 </div>
             </header>
             <div id="atf-content" class="d-f-r">
-                <div id="col1" class="img-bull">
-                    <img id="" width="300px" src="assets/caja1.png" alt="">
-                    <div id="bullet" class="">
-                        <div id="circle">
-                            <div id="circle2"></div>
+                <div id="col1">
+                    <div class="img-bull">
+                        <img id="" width="300px" src="assets/caja1.png" alt="">
+                        <div id="bullet" class="bull">
+                            <div id="circle" class="trigger">
+                                <div id="circle2"></div>
+                                <div id="bullet-text" class="content">
+                                    <h3>Lorem Ipsum</h3>
+                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati”</p>
+                                </div>
+                            </div>
                         </div>
-                        <div id="bullet-text">
-                            <h3>Lorem Ipsum</h3>
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati”</p>
+                        <div id="bullet" class="bull1">
+                            <div id="circle" class="trigger">
+                                <div id="circle2"></div>
+                                <div id="bullet-text" class="content">
+                                    <h3>Lorem Ipsum</h3>
+                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati”</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="bullet" class="bull2">
+                            <div id="circle" class="trigger">
+                                <div id="circle2"></div>
+                                <div id="bullet-text" class="content">
+                                    <h3>Lorem Ipsum</h3>
+                                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati”</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div id="col2">
-                    <h1>Protege tu producto con la <br>
-                        mejor calidad en el mercado</h1>
-                    <div id="btn" class="btn-1 d-f-r">
-                        <p>Contáctanos</p>
-                        <img src="assets/arrow-down.svg" alt="">
-                    </div>
+                    <h1>Diseñadores de contenedores premium <br> y comercializadora de materias primas</h1>
+                    <a href="#formulario">
+                        <div id="btn" class="btn-1 d-f-r">
+                            <p>Contáctanos</p>
+                            <img id="arrow-icon" src="assets/arrow-down-white.svg" alt="">
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -66,9 +87,33 @@
         <section id="productos">
             <div id="contenedor">
                 <h2>Productos</h2>
-                <div id="slider">
-                    
-                </div>
+
+                <div class="slider-container">
+                    <div class="slides" id="slides">
+                      <div class="slide">
+                        <img id="img-slider" src="assets/caja2 1.jpg" alt="Slide 1">
+                        <div class="slide-text">Texto de la diapositiva 1</div>
+                      </div>
+                      <div class="slide">
+                        <img src="assets/" alt="Slide 2">
+                        <div class="slide-text">Texto de la diapositiva 2</div>
+                      </div>
+                      <div class="slide">
+                        <img src="https://via.placeholder.com/600x400" alt="Slide 3">
+                        <div class="slide-text">Texto de la diapositiva 3</div>
+                      </div>
+                      <div class="slide">
+                        <img src="https://via.placeholder.com/600x400" alt="Slide 4">
+                        <div class="slide-text">Texto de la diapositiva 4</div>
+                      </div>
+                      <div class="slide">
+                        <img src="https://via.placeholder.com/600x400" alt="Slide 5">
+                        <div class="slide-text">Texto de la diapositiva 5</div>
+                      </div>
+                    </div>
+                    <div class="indicators" id="indicators"></div>
+                  </div>
+
             </div>
         </section>
         <section id="formulario">
@@ -117,5 +162,88 @@
         </footer>
 
     </div>
+    <script>
+        const triggers = document.querySelectorAll(".trigger");
+    
+        let lockedTrigger = null;
+    
+        triggers.forEach(trigger => {
+          const content = trigger.querySelector(".content");
+    
+          // Hover in
+          trigger.addEventListener("mouseenter", () => {
+            if (lockedTrigger !== trigger) {
+              content.classList.add("visible");
+            }
+          });
+    
+          // Hover out
+          trigger.addEventListener("mouseleave", () => {
+            if (lockedTrigger !== trigger) {
+              content.classList.remove("visible");
+            }
+          });
+    
+          // Click: abre este y cierra otros
+          trigger.addEventListener("click", (e) => {
+            e.stopPropagation();
+    
+            // Cierra otros
+            triggers.forEach(t => {
+              const c = t.querySelector(".content");
+              if (t !== trigger) {
+                c.classList.remove("visible");
+              }
+            });
+    
+            // Abre este
+            content.classList.add("visible");
+            lockedTrigger = trigger;
+          });
+        });
+    
+        // Click fuera: cierra todo
+        document.addEventListener("click", () => {
+          triggers.forEach(trigger => {
+            const content = trigger.querySelector(".content");
+            content.classList.remove("visible");
+          });
+          lockedTrigger = null;
+        });
+
+
+
+        const slides = document.getElementById('slides');
+    const indicatorsContainer = document.getElementById('indicators');
+    const totalSlides = 5;
+    let currentIndex = 0;
+
+    // Crear indicadores
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('indicator');
+      if (i === 0) dot.classList.add('active');
+      dot.dataset.index = i;
+      dot.addEventListener('click', () => {
+        currentIndex = i;
+        updateSlider();
+      });
+      indicatorsContainer.appendChild(dot);
+    }
+
+    const updateSlider = () => {
+      slides.style.transform = `translateX(-${currentIndex * 100}vw)`;
+      document.querySelectorAll('.indicator').forEach(dot => {
+        dot.classList.remove('active');
+      });
+      document.querySelector(`.indicator[data-index="${currentIndex}"]`).classList.add('active');
+    }
+
+    // Cambio automático de diapositiva
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlider();
+    }, 10000);
+      </script>
 </body>
 </html>

@@ -5,7 +5,11 @@
 body{
     font-family: "Noto Sans JP", sans-serif ;
 }
+a{
+  text-decoration: none;
+  color: white;
 
+}
 .noto-sans-jp-1 {
     font-family: "Noto Sans JP", sans-serif;
     font-optical-sizing: auto;
@@ -38,6 +42,9 @@ header{
 .m-option{
     padding: 20px;
 }
+.m-option:hover{
+  color: #EC6F43;
+}
 #menu{
     display: flex;
 }
@@ -63,8 +70,6 @@ header{
 }
 #bullet{
   position: absolute;
-  top:50px;
-  right: 130px;
 }
 #bullet-text{
   background: rgba(255, 255, 255, 0.2);
@@ -111,6 +116,10 @@ header{
     width: 50%;
     margin: auto 0;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
 }
 #col2{
     width: 50%;
@@ -118,13 +127,84 @@ header{
     align-items: center;
     margin-top: 200px;
 }
+.img-bull{
+  min-width: 450px;
+  max-width: 700px;
+  position: relative;
+}
+.bull{
+  top:250px;
+  left: 40px;
+}
+.bull1{
+  top:10px;
+  right: 200px;
+}
+.bull2{
+  bottom: 100px;
+  left: 90px;
+}
+.trigger {
+  width: 200px;
+  height: 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  position: relative;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.1px);
+  -webkit-backdrop-filter: blur(12.1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.content {
+  position: absolute;
+  left: 0;
+  width: 200px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  display: none;
+  z-index: 100;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.1px);
+  -webkit-backdrop-filter: blur(12.1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.content.visible {
+  display: block;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.1px);
+  -webkit-backdrop-filter: blur(12.1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
 #btn{
-    margin-top: 20px;
-    border: ;
-    border-radius: 8pt;
-    border: 1px solid #ffffff;
-    width: 250px;
-    height: 50px;
+  margin-top: 20px;
+  border: ;
+  border-radius: 8pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+}
+.btn-1{
+  background-color: #FF5900;
+  color: white;
+}
+.btn-1:hover{
+  background-color: #d74b00;
+}
+#arrow-icon{
+  margin-left: 15px;
+  width: 20px;
 }
 #quienesomos{
     position: relative;
@@ -132,6 +212,8 @@ header{
 }
 #bg-img{
     position: absolute;
+    height: 100vh;
+    width: 100%;
 }
 .columns{
     
@@ -140,6 +222,8 @@ header{
     width: 50%;
     margin-top: 30%;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 #col-2{
     width: 50%;
@@ -199,91 +283,62 @@ footer{
 }
 /*Slider*/
 .slider-container {
-    position: relative;
-    width: 90%;
-    max-width: 900px;
-    overflow: hidden;
-    background: #fff;
-    border-radius: 8px;
-  }
-
-  .slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 500%;
-  }
-
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 400px;
+}
+.slides {
+  display: flex;
+  width: calc(100vw * 5);
+  transition: transform 0.5s ease-in-out;
+}
+.slide {
+  width: 100vw;
+  display: flex;
+  flex-shrink: 0;
+}
+.slide img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+.slide-text {
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #f4f4f4;
+  font-size: 1.2rem;
+}
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 10;
+}
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.indicator.active {
+  background-color: #333;
+}
+@media (max-width: 768px) {
   .slide {
+    flex-direction: column;
+  }
+  .slide img, .slide-text {
     width: 100%;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-    align-items: center;
-    justify-content: center;
+    height: 50%;
   }
-
-  .slide img {
-    max-width: 100%;
-    border-radius: 6px;
-  }
-
-  .text-column {
-    padding: 20px;
-  }
-
-  .text-column h2 {
-    margin-top: 0;
-    font-size: 1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .slide {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .text-column {
-      padding: 10px 0 0;
-    }
-  }
-
-  .nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-  }
-
-  .prev { left: 10px; }
-  .next { right: 10px; }
-
-  .dots {
-    display: flex;
-    justify-content: center;
-    margin: 15px 0;
-  }
-
-  .dot {
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
-    border-radius: 50%;
-    background-color: #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .dot.active {
-    background-color: #333;
-  }
+}
+  
