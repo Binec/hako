@@ -71,7 +71,7 @@
             <img id="bg-img" src="assets/cajas-fondo-blanco.svg" alt="">
             <div id="columns" class="d-f-r" >
                 <div id="col-1">
-                    <h1>Quiénes somos</h1>
+                    <h1 style="font-weight: 200; font-size: 26pt;">Quiénes somos</h1>
                 </div>
                 <div id="col-2">
                     <div>
@@ -86,8 +86,7 @@
         </section>
         <section id="productos">
             <div id="contenedor">
-                <h2>Productos</h2>
-
+                <h2 style="font-weight: 200; font-size: 26pt;">Productos</h2>
                 <div class="slider-container">
                     <div class="slides" id="slides">
                       <div class="slide">
@@ -95,26 +94,48 @@
                         <div class="slide-text">
                             <h2>Caja 1</h2>
                             <h3>Lorem Ipsum</h3>
+                            <p>Texto de posicionamiento máximo 3 renglones de contenido</p>
+                            <div class="extra-text" id="extra-0">Este es el texto completo de la diapositiva 1. Aquí se puede mostrar más información detallada.</div>
+                            <button class="leer-mas-btn" onclick="toggleText(0)">Leer más</button>
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <img id="img-slider" src="assets/caja2 1.jpg" alt="Slide 1">
+                        <div class="slide-text">
+                            <h2>Caja 2</h2>
+                            <h3>Lorem Ipsum</h3>
                             <p></p>
                             <button class="leer-mas-btn" onclick="toggleText(0)">Leer más</button>
                             <div class="extra-text" id="extra-0">Este es el texto completo de la diapositiva 1. Aquí se puede mostrar más información detallada.</div>
                         </div>
                       </div>
                       <div class="slide">
-                        <img src="assets/" alt="Slide 2">
-                        <div class="slide-text">Texto de la diapositiva 2</div>
-                      </div>
-                      <div class="slide">
-                        <img src="https://via.placeholder.com/600x400" alt="Slide 3">
-                        <div class="slide-text">Texto de la diapositiva 3</div>
-                      </div>
-                      <div class="slide">
-                        <img src="https://via.placeholder.com/600x400" alt="Slide 4">
-                        <div class="slide-text">Texto de la diapositiva 4</div>
-                      </div>
-                      <div class="slide">
-                        <img src="https://via.placeholder.com/600x400" alt="Slide 5">
-                        <div class="slide-text">Texto de la diapositiva 5</div>
+                        <img id="img-slider" src="assets/caja2 1.jpg" alt="Slide 1">
+                        <div class="slide-text">
+                            <h2>Caja 3</h2>
+                            <h3>Lorem Ipsum</h3>
+                            <p></p>
+                            <button class="leer-mas-btn" onclick="toggleText(0)">Leer más</button>
+                            <div class="extra-text" id="extra-0">Este es el texto completo de la diapositiva 1. Aquí se puede mostrar más información detallada.</div>
+                        </div>
+                      </div><div class="slide">
+                        <img id="img-slider" src="assets/caja2 1.jpg" alt="Slide 1">
+                        <div class="slide-text">
+                            <h2>Caja 4</h2>
+                            <h3>Lorem Ipsum</h3>
+                            <p></p>
+                            <button class="leer-mas-btn" onclick="toggleText(0)">Leer más</button>
+                            <div class="extra-text" id="extra-0">Este es el texto completo de la diapositiva 1. Aquí se puede mostrar más información detallada.</div>
+                        </div>
+                      </div><div class="slide">
+                        <img id="img-slider" src="assets/caja2 1.jpg" alt="Slide 1">
+                        <div class="slide-text">
+                            <h2>Caja 5</h2>
+                            <h3>Lorem Ipsum</h3>
+                            <p></p>
+                            <button class="leer-mas-btn" onclick="toggleText(0)">Leer más</button>
+                            <div class="extra-text" id="extra-0">Este es el texto completo de la diapositiva 1. Aquí se puede mostrar más información detallada.</div>
+                        </div>
                       </div>
                     </div>
                     <div class="indicators" id="indicators"></div>
@@ -128,28 +149,29 @@
                     <img width="350px" src="assets/assets@2x.png" alt="">
                 </div>
                 <div class="col-2-form">
-                    <h2>Formulario</h2>
-                    <form action="">
+                    <h2 style="font-weight: 200; margin-bottom: 20px; font-size: 26pt;">Formulario</h2>
+                    <form onsubmit="event.preventDefault(); enviarFormulario();">
                         <h3>Contáctanos</h3>
                         <p style="margin-bottom: 15px;">Llena los datos para que alguien de nuestro equipo se comunique contigo</p>
                         <div id="d-input">
                             <img id="inptu-icon" src="assets/user-icon.svg" alt="">
-                            <input type="text" placeholder="Nombre completo">
+                            <input id="nombre" type="text" name="nombre" placeholder="Nombre completo">
                         </div>
                         <div id="d-input">
                             <img id="inptu-icon" src="assets/mail-icon.svg" alt="">
-                            <input type="text" placeholder="Correo electronico">
+                            <input id="correo" type="text" name="correo" placeholder="Correo electronico">
                         </div>
                         <div id="d-input">
                             <img id="inptu-icon" src="assets/phone-icon.svg" alt="">
-                            <input type="text" placeholder="Número celular">
+                            <input id="celular" type="text" name="celular" placeholder="Número celular">
                         </div>
                         <div id="d-input">
                             <img id="inptu-icon" src="assets/message-icon.svg" alt="">
-                            <input id="message" type="text" placeholder="Mensaje">
+                            <input id="message" name="mensaje" type="text" placeholder="Mensaje">
                         </div>
                         <input id="btn-enviar" type="submit" value="Enviar">
                     </form>
+                    <div id="mensajeConfirmacion"></div>
                 </div>
             </div>
         </section>
@@ -249,7 +271,7 @@
     setInterval(() => {
       currentIndex = (currentIndex + 1) % totalSlides;
       updateSlider();
-    }, 10000);
+    }, 20000);
 
     function toggleText(index) {
       const textDiv = document.getElementById(`extra-${index}`);
@@ -259,6 +281,27 @@
         textDiv.style.display = 'block';
       }
     }
+
+    /*form*/
+    function enviarFormulario() {
+            const nombre = document.getElementById("nombre").value;
+            const correo = document.getElementById("correo").value;
+            const celular = document.getElementById("celular").value;
+            const mensaje = document.getElementById("message").value;
+
+            google.script.run.withSuccessHandler(mostrarMensaje).guardarDatos(nombre, correo, celular, mensaje);
+        }
+
+        function mostrarMensaje(isSuccess) {
+            const mensajeArea = document.getElementById("mensajeConfirmacion");
+            if (isSuccess) {
+                mensajeArea.innerText = "Datos recibidos correctamente. ¡Gracias!";
+                mensajeArea.style.color = "green";
+            } else {
+                mensajeArea.innerText = "Hubo un problema, intenta nuevamente.";
+                mensajeArea.style.color = "red";
+            }
+        }
       </script>
 </body>
 </html>
