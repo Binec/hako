@@ -150,7 +150,7 @@
                 </div>
                 <div class="col-2-form">
                     <h2 style="font-weight: 200; margin-bottom: 20px; font-size: 26pt;">Formulario</h2>
-                    <form onsubmit="event.preventDefault(); enviarFormulario();">
+                    <form id="contactForm" >
                         <h3>Contáctanos</h3>
                         <p style="margin-bottom: 15px;">Llena los datos para que alguien de nuestro equipo se comunique contigo</p>
                         <div id="d-input">
@@ -167,7 +167,7 @@
                         </div>
                         <div id="d-input">
                             <img id="inptu-icon" src="assets/message-icon.svg" alt="">
-                            <input id="message" name="mensaje" type="text" placeholder="Mensaje">
+                            <input id="message" name="message" type="text" placeholder="Mensaje">
                         </div>
                         <input id="btn-enviar" type="submit" value="Enviar">
                     </form>
@@ -241,7 +241,7 @@
 
 
 
-        const slides = document.getElementById('slides');
+    const slides = document.getElementById('slides');
     const indicatorsContainer = document.getElementById('indicators');
     const totalSlides = 5;
     let currentIndex = 0;
@@ -283,15 +283,22 @@
     }
 
     /*form*/
-    function enviarFormulario() {
-            const nombre = document.getElementById("nombre").value;
-            const correo = document.getElementById("correo").value;
-            const celular = document.getElementById("celular").value;
-            const mensaje = document.getElementById("message").value;
-
-            google.script.run.withSuccessHandler(mostrarMensaje).guardarDatos(nombre, correo, celular, mensaje);
-        }
-
+    document.getElementById("contactForm").onsubmit = async function(event) {
+            event.preventDefault(); // Prevents the default form submission
+            
+            const formData = new FormData(this);
+            const response = await fetch("https://script.google.com/macros/s/AKfycbyj2zTP-6RqKQK4Xkj6YX1bIhT5ZL7NFHxw2QfxNAjghjWYs66F8max0LsnMr3Jz7Ub/exec", { // Replace with your Google Apps Script URL
+                method: "POST",
+                body: formData
+            });
+            
+            if (response.ok) {
+                alert("Submission successful!");
+                this.reset(); // Reset the form
+            } else {
+                alert("Submission failed.");
+            }
+        };
         function mostrarMensaje(isSuccess) {
             const mensajeArea = document.getElementById("mensajeConfirmacion");
             if (isSuccess) {
