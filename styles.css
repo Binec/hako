@@ -63,10 +63,6 @@ header{
     GradientType=0
     );
     height: 100vh;
-    width: ;
-}
-#atf-content{
-
 }
 .img-bull{
   position: relative;
@@ -190,7 +186,6 @@ header{
 }
 #btn{
   margin-top: 20px;
-  border: ;
   border-radius: 8pt;
   display: flex;
   justify-content: center;
@@ -222,6 +217,8 @@ header{
     width: 100%;
 }
 #contenedor{
+  display: flex;
+  flex-direction: column;
   text-align: center;
   padding-top: 30px;
 }
@@ -255,7 +252,7 @@ input{
     border-radius: 5pt;
     border-style: none;
 }
-#inptu-icon{
+#input-icon{
     position: absolute;
     padding-top: 8px;
     padding-left: 10px;

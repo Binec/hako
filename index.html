@@ -156,20 +156,20 @@
                         <h3>Contáctanos</h3>
                         <p style="margin-bottom: 15px;">Llena los datos para que alguien de nuestro equipo se comunique contigo</p>
                         <div id="d-input">
-                            <img id="inptu-icon" src="assets/user-icon.svg" alt="">
+                            <img id="input-icon" src="assets/user-icon.svg" alt="">
                             <input id="nombre" type="text" name="nombre" placeholder="Nombre completo">
                         </div>
                         <div id="d-input">
-                            <img id="inptu-icon" src="assets/mail-icon.svg" alt="">
+                            <img id="input-icon" src="assets/mail-icon.svg" alt="">
                             <input id="correo" type="text" name="correo" placeholder="Correo electronico">
                         </div>
                         <div id="d-input">
-                            <img id="inptu-icon" style="width: 10px;" src="assets/phone-icon.svg" alt="">
+                            <img id="input-icon" style="width: 10px;" src="assets/phone-icon.svg" alt="">
                             <input id="celular" type="text" name="celular" placeholder="Número celular">
                         </div>
                         <div id="d-input">
-                            <img id="inptu-icon"  src="assets/message-icon.svg" alt="">
-                            <input id="message" name="message" type="text" placeholder="Mensaje">
+                            <img id="input-icon" src="assets/message-icon.svg" alt="">
+                            <input id="message" style="padding-top: 10px;" name="message" type="text" placeholder="Mensaje">
                         </div>
                         <input id="btn-enviar" type="submit" value="Enviar">
                     </form>
@@ -194,30 +194,24 @@
     </div>
     <script>
         const triggers = document.querySelectorAll(".trigger");
-    
         let lockedTrigger = null;
-    
         triggers.forEach(trigger => {
           const content = trigger.querySelector(".content");
-    
           // Hover in
           trigger.addEventListener("mouseenter", () => {
             if (lockedTrigger !== trigger) {
               content.classList.add("visible");
             }
           });
-    
           // Hover out
           trigger.addEventListener("mouseleave", () => {
             if (lockedTrigger !== trigger) {
               content.classList.remove("visible");
             }
           });
-    
           // Click: abre este y cierra otros
           trigger.addEventListener("click", (e) => {
             e.stopPropagation();
-    
             // Cierra otros
             triggers.forEach(t => {
               const c = t.querySelector(".content");
@@ -225,13 +219,11 @@
                 c.classList.remove("visible");
               }
             });
-    
             // Abre este
             content.classList.add("visible");
             lockedTrigger = trigger;
           });
         });
-    
         // Click fuera: cierra todo
         document.addEventListener("click", () => {
           triggers.forEach(trigger => {
@@ -240,67 +232,64 @@
           });
           lockedTrigger = null;
         });
+        const slides = document.getElementById('slides');
+        const indicatorsContainer = document.getElementById('indicators');
+        const totalSlides = 5;
+        let currentIndex = 0;
 
+        // Crear indicadores
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('indicator');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', () => {
+            currentIndex = i;
+            updateSlider();
+        });
+        indicatorsContainer.appendChild(dot);
+        }
 
+        const updateSlider = () => {
+        slides.style.transform = `translateX(-${currentIndex * 100}vw)`;
+        document.querySelectorAll('.indicator').forEach(dot => {
+            dot.classList.remove('active');
+        });
+        document.querySelector(`.indicator[data-index="${currentIndex}"]`).classList.add('active');
+        }
 
-    const slides = document.getElementById('slides');
-    const indicatorsContainer = document.getElementById('indicators');
-    const totalSlides = 5;
-    let currentIndex = 0;
-
-    // Crear indicadores
-    for (let i = 0; i < totalSlides; i++) {
-      const dot = document.createElement('div');
-      dot.classList.add('indicator');
-      if (i === 0) dot.classList.add('active');
-      dot.dataset.index = i;
-      dot.addEventListener('click', () => {
-        currentIndex = i;
+        // Cambio automático de diapositiva
+        setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
         updateSlider();
-      });
-      indicatorsContainer.appendChild(dot);
-    }
+        }, 20000);
 
-    const updateSlider = () => {
-      slides.style.transform = `translateX(-${currentIndex * 100}vw)`;
-      document.querySelectorAll('.indicator').forEach(dot => {
-        dot.classList.remove('active');
-      });
-      document.querySelector(`.indicator[data-index="${currentIndex}"]`).classList.add('active');
-    }
+        function toggleText(index) {
+        const textDiv = document.getElementById(`extra-${index}`);
+        if (textDiv.style.display === 'block') {
+            textDiv.style.display = 'none';
+        } else {
+            textDiv.style.display = 'block';
+        }
+        }
 
-    // Cambio automático de diapositiva
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      updateSlider();
-    }, 20000);
-
-    function toggleText(index) {
-      const textDiv = document.getElementById(`extra-${index}`);
-      if (textDiv.style.display === 'block') {
-        textDiv.style.display = 'none';
-      } else {
-        textDiv.style.display = 'block';
-      }
-    }
-
-    /*form*/
-    document.getElementById("contactForm").onsubmit = async function(event) {
-            event.preventDefault(); // Prevents the default form submission
-            
-            const formData = new FormData(this);
-            const response = await fetch("https://script.google.com/macros/s/AKfycbxUJspxKFzZtdS3woD99zjToNQr6y5pmD1CitF4P9vegktfqEFUeTsTpmIatwx_HGa0/exec", { // Replace with your Google Apps Script URL
-                method: "POST",
-                body: formData
-            });
-            
-            if (response.ok) {
-                alert("Submission successful!");
-                this.reset(); // Reset the form
-            } else {
-                alert("Submission failed.");
-            }
-        };
+        /*form*/
+        document.getElementById("contactForm").onsubmit = async function(event) {
+                event.preventDefault(); // Prevents the default form submission
+                
+                const formData = new FormData(this);
+                const response = await fetch("https://script.google.com/macros/s/AKfycbzSAfsybCNWdAJh6-2WzOvebbNkezT_th_JOgK9tGIjEqPlWU5X0fcpp3F77uL6nxqP/exec", { // Replace with your Google Apps Script URL
+                    method: "POST",
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    alert("Submission successful!");
+                    this.reset(); 
+                } else {
+                    alert("Submission failed.");
+                }
+            };
         function mostrarMensaje(isSuccess) {
             const mensajeArea = document.getElementById("mensajeConfirmacion");
             if (isSuccess) {
