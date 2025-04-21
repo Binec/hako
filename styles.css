@@ -431,6 +431,46 @@ model-viewer{
 :not(:defined)>* {
   display: none;
 }
+.slide-up {
+  opacity: 0;
+  transform: translateY(100px); /* Start 100px below */
+  animation: slideUp 2.5s ease forwards;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(100px); /* Starts 100px to the right */
+  animation: slideInRight 1s ease forwards;
+}
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Ends at original position */
+  }
+}
+.bounce-animation {
+  animation: bounce 1.5s ease infinite 5s;  
+  /* 
+    1.5s = duration of bounce animation  
+    infinite = loop forever  
+    5s = delay before repeating 
+  */
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }  
+  30% { transform: translateY(-5px); }  
+  60% { transform: translateY(0); }  
+  80% { transform: translateY(-5px); }  
+}
 @media screen and (max-width: 1600px) {
   #m-container{
     width: 1400px;
