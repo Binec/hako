@@ -209,6 +209,9 @@ header{
 .btn-1:hover{
   background-color: #d74b00;
 }
+#btn-enviar{
+  padding: 0;
+}
 #arrow-icon{
   margin-left: 15px;
   width: 20px;
@@ -592,8 +595,5 @@ footer{
   }
 }
 @media screen and (max-width: 375px) {
-  #m-container{
-    height: 110vh;
-  }
 }
   
