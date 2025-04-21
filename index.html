@@ -17,20 +17,29 @@
                 <div id="logo">
                     <img src="assets/hako-negativo1.svg" alt="">
                 </div>
-                <div id="menu" class="d-f-r">
+                <div id="menu" class="d-f-r desktop">
                     <a href=""><p class="m-option">Conócenos</p></a>
                     <a href=""><p class="m-option">Productos</p></a>
                     <a href=""><p class="m-option">Contacto</p></a>
+                </div>
+                <img class="menu-button mobile" src="assets/menu.svg" alt="">
+                <div class="menu-overlay">
+                    <div class="menu-content">
+                        <div class="menu-option">Inicio</div>
+                        <div class="menu-option">Quienes somos</div>
+                        <div class="menu-option">Contacto</div>
+                    </div>
                 </div>
             </header>
             <div id="atf-content" class="d-f-r">
                 <div id="col1">
                     <div class="img-bull">
-                        <img id="" width="300px" src="assets/caja1.png" alt="">
+                        <h1 class="mobile" style="margin-bottom: 35px; font-weight: 200;">Diseñadores de contenedores premium <br> y comercializadora de materias primas</h1>
+                        <img id="caja" width="300px" src="assets/caja1.png" alt="">
                         <div id="bullet" class="bull">
                             <div id="circle" class="trigger">
                                 <div id="circle2"></div>
-                                <div id="bullet-text" class="content">
+                                <div id="bullet-text" class="content txtbull">
                                     <h3>Lorem Ipsum</h3>
                                     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati”</p>
                                 </div>
@@ -39,7 +48,7 @@
                         <div id="bullet" class="bull1">
                             <div id="circle" class="trigger">
                                 <div id="circle2"></div>
-                                <div id="bullet-text" class="content">
+                                <div id="bullet-text" class="content txtbull1">
                                     <h3>Lorem Ipsum</h3>
                                     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati”</p>
                                 </div>
@@ -48,16 +57,22 @@
                         <div id="bullet" class="bull2">
                             <div id="circle" class="trigger">
                                 <div id="circle2"></div>
-                                <div id="bullet-text" class="content">
+                                <div id="bullet-text" class="content txtbull2">
                                     <h3>Lorem Ipsum</h3>
                                     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati”</p>
                                 </div>
                             </div>
                         </div>
+                        <a href="#formulario">
+                            <div id="btn" class="btn-1 d-f-r mobile hidden">
+                                <p>Contáctanos</p>
+                                <img id="arrow-icon" src="assets/arrow-down-white.svg" alt="">
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div id="col2">
-                    <h1>Diseñadores de contenedores premium <br> y comercializadora de materias primas</h1>
+                <div id="col2" class="desktop">
+                    <h1 class="desktop">Diseñadores de contenedores premium <br> y comercializadora de materias primas</h1>
                     <a href="#formulario">
                         <div id="btn" class="btn-1 d-f-r">
                             <p>Contáctanos</p>
@@ -69,6 +84,7 @@
         </section>
         <section id="quienesomos">
             <img id="bg-img" src="assets/cajas-fondo-blanco.svg" alt="">
+            <img id="bg-img-mob" class="hidden" src="assets/bg-mobile.jpg" alt="">
             <div id="columns" class="d-f-r" >
                 <div id="col-1">
                     <h1 style="font-weight: 200; font-size: 26pt;">Quiénes somos</h1>
@@ -76,13 +92,13 @@
                 <div id="col-2">
                     <div>
                         <img id="location" src="assets/icon-location.svg" alt="">
-                        <p>Transportamos tu equipo
+                        <p class="text-qs">Transportamos tu equipo
                             médico de punto A a B
                             con la mejor logística y cuidado</p>
                         <img id="location" src="assets/icon-location.svg" alt="">
                     </div>
-                    <p>Seguridad de transporte</p>
-                    <p>Garantía de tiempo de entrega</p>
+                    <p class="text-qs">Seguridad de transporte</p>
+                    <p class="text-qs">Garantía de tiempo de entrega</p>
                 </div>
             </div>
         </section>
@@ -146,7 +162,7 @@
             </div>
         </section>
         <section id="formulario">
-            <div class="d-f-r">
+            <div id="formu" class="d-f-r">
                 <div id="col-1" >
                     <img width="350px" src="assets/assets@2x.png" alt="">
                 </div>
@@ -232,6 +248,7 @@
           });
           lockedTrigger = null;
         });
+        
         const slides = document.getElementById('slides');
         const indicatorsContainer = document.getElementById('indicators');
         const totalSlides = 5;
@@ -300,6 +317,28 @@
                 mensajeArea.style.color = "red";
             }
         }
+        
+        const menuButton = document.querySelector('.menu-button');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        
+        menuButton.addEventListener('click', () => {
+            menuOverlay.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on an option
+        const menuOptions = document.querySelectorAll('.menu-option');
+        menuOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                menuOverlay.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        menuOverlay.addEventListener('click', (e) => {
+            if (e.target === menuOverlay) {
+                menuOverlay.classList.remove('active');
+            }
+        });
       </script>
 </body>
 </html>
