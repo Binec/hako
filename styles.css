@@ -382,6 +382,55 @@ footer{
 .mobile{
   display: none;
 }
+model-viewer{
+  height: 400px;
+  width: 400px;
+}
+.anchor {
+  display: none;
+}
+
+.lineContainer {
+  pointer-events: none;
+  display: block;
+}
+
+.line {
+  stroke: #EC6F43;
+  stroke-width: 2;
+  stroke-dasharray: 2
+}
+
+#container {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  bottom: 8px;
+  left: 8px;
+  width: 100%;
+}
+.label {
+  background: #1B2732;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  
+  padding: 0.5em 1em;
+  bottom: 10px;
+  pointer-events: none;
+}
+#animation-demo::part(default-ar-button) {
+  bottom: 64px;
+}
+/* This keeps child nodes hidden while the element loads */
+:not(:defined)>* {
+  display: none;
+}
 @media screen and (max-width: 1600px) {
   #m-container{
     width: 1400px;
