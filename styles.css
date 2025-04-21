@@ -544,8 +544,7 @@ model-viewer{
     width: 95%;
   }
   .img-bull{
-    margin-top: 150px;
-    width: 450px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
