@@ -565,8 +565,30 @@ footer{
   .slider-container{
     margin-top: 55px;
   }
+  .col-2-form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  #col-1{
+    margin-top: 50px;
+    width: 100%;
+  }
+  #formulario{
+    text-align: center;
+  }
   #formu{
     flex-direction: column-reverse;
+  }
+  form{
+    width: 75%;
+    text-align: left;
+  }
+  input{
+    width: 90%;
+  }
+  #assets-hk{
+    width: 200px;
   }
 }
 @media screen and (max-width: 375px) {
