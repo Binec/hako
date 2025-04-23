@@ -465,6 +465,26 @@ model-viewer{
     5s = delay before repeating 
   */
 }
+.animated-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: growFromCenter 1.5s ease-out;
+}
+
+@keyframes growFromCenter {
+  0% {
+      transform: scale(0);
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }  
   30% { transform: translateY(-5px); }  
@@ -482,9 +502,7 @@ model-viewer{
 }
 @media screen and (max-width: 1366px) {
   #m-container{
-   
   }
-
 }
 .mobile{
   display: none;
@@ -546,7 +564,6 @@ model-viewer{
 .menu-option:hover {
   background: #f5f5f5;
 }
-
 @media (max-width: 768px) {
   .slide {
     flex-direction: column;
