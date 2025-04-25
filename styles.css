@@ -756,6 +756,7 @@ model-viewer{
     font-size: 18pt;
     flex-direction: row;
     display: flex;
+    margin-top: 50px;
   }
   .txtbull{
     width: 200px;
@@ -787,14 +788,32 @@ model-viewer{
   #bg-img{
     display: none;
   }
+  #col-1{
+    width: 100%;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   #col-2{
     margin-top: 60px;
+    width: 80%;
   }
   #location{
     margin-top: 25px;
   }
   .slider-container{
-    margin-top: 55px;
+    margin-top: 30px;
+  }
+  .slide-text{
+    width: 80%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    background-color: #f4f4f4;
+    font-size: 1.2rem;  
   }
   .col-2-form{
     display: flex;
@@ -820,6 +839,11 @@ model-viewer{
   }
   #assets-hk{
     width: 200px;
+    height: 200px;
+  }
+  footer{
+    margin-top: 30px;
+    padding: 20px;
   }
 }
 @media screen and (max-width: 375px) {
