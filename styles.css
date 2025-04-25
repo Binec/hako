@@ -869,6 +869,21 @@ model-viewer{
     bottom: 120px;
     left: 50px;
   }
+  #bullet-text{
+    width: 150px;
+    font-size: 8pt;
+    padding: 15px;
+  }
+  .txtbull{
+    margin-top: 115px;
+  }
+  .bull1{
+    top: 300px;
+    right: 50px;
+  }
+  .txtbull1{
+    margin-left: -190px;
+  }
   #btn{
     width: 300px;
     height: 50px;
@@ -876,5 +891,12 @@ model-viewer{
     flex-direction: row;
     display: flex;
     margin-top: 50px;
+  }
+  #contenedor{
+    padding-top: 20px;
+  }
+  footer{
+    margin-top: 150px;
+
   }
 }
