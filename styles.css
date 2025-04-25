@@ -3,7 +3,6 @@
     padding: 0;
 }
 body{
-    
     margin: 0 auto;
     font-family: "Noto Sans JP", sans-serif ;
 }
@@ -14,6 +13,15 @@ a{
 a:hover{
   color: #FF5900;
   cursor: pointer;
+}
+a:visited{
+  color: white;
+}
+a:active{
+  color: #FF5900;
+}
+a:focus{
+  color: #FF5900;
 }
 .hidden{
   display: none;
@@ -55,8 +63,7 @@ header{
 #menu{
     display: flex;
 }
-#ATF{
-    color: white;
+#bg-grad{
     background: #1B2732;
     background: -webkit-linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(48, 69, 89, 1) 100%);
     background: -moz-linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(48, 69, 89, 1) 100%);
@@ -66,6 +73,17 @@ header{
     endColorstr="#304559",
     GradientType=0
     );
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+} 
+#ATF{
+    color: white;
     height: 100vh;
 }
 .img-bull{
@@ -121,7 +139,6 @@ header{
   -webkit-backdrop-filter: blur(12.1px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
-
 #col1{
     width: 50%;
     margin: auto 0;
@@ -133,9 +150,8 @@ header{
 }
 #col2{
     width: 50%;
-    vertical-align: center;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 300px;
 }
 .img-bull{
   min-width: 450px;
@@ -222,9 +238,13 @@ header{
 #quienesomos{
     position: relative;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #location{
-  width: 50px;
+  width: 30px;
+  margin-right: 20px;
 }
 #bg-img{
     position: absolute;
@@ -235,22 +255,39 @@ header{
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 200px;
 }
 #col-1{
     width: 50%;
-    margin-top: 30%;
+    margin-top: 200px;
     text-align: center;
     display: flex;
-    justify-content: center;
+}
+#assets-hk
+{
+    width: 300px;
+    height: 280px;
 }
 #col-2{
     width: 50%;
-    margin-top: 30%;
+    margin-top: 160px;
+}
+#bullet-naranja{
+  margin-bottom: 50px;
 }
 #productos{
     background-color: #F5F5F5;
     height: 100vh;
+}
+#bg-gray{
+    background-color: #F5F5F5;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    left: 0;
 }
 #d-input{
     position:relative;
@@ -291,12 +328,21 @@ form{
     border-radius: 10px;
 }
 footer{
-  background-color: #D9D9D9;
-  padding: 30px;
   text-align:  center;
+}
+#bg-footer{
+  background-color: #1B2732;
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  left: 0;
 }
 #footer-content{
   justify-content: space-between;
+  padding-top: 30px;
 }
 #legales{
   text-align: left;
@@ -312,13 +358,14 @@ footer{
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 500px;
-  
+  height: 600px;
 }
 .slides {
   display: flex;
   width: calc(100% * 5);
   transition: transform 0.5s ease-in-out;
+  flex-wrap: wrap;
+  row-gap: 100px;
 }
 .slide {
   width: 100vw;
@@ -392,18 +439,15 @@ model-viewer{
 .anchor {
   display: none;
 }
-
 .lineContainer {
   pointer-events: none;
   display: block;
 }
-
 .line {
   stroke: #EC6F43;
   stroke-width: 2;
   stroke-dasharray: 2
 }
-
 #container {
   position: absolute;
   display: flex;
@@ -449,11 +493,55 @@ model-viewer{
     transform: translateY(0);
   }
 }
+/* Animation styles */
+.slide-in-right1,
+.slide-in-right2,
+.slide-in-right3 {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: 
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+/* When visible */
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.s;
+}
+
+.slide-in-right1.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: .5s;
+}
+
+.slide-in-right2.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 1s;
+}
+/* Base state - hidden */
 .slide-in-right {
   opacity: 0;
-  transform: translateX(100px); /* Starts 100px to the right */
-  animation: slideInRight 1s ease forwards;
+  transform: translateX(100px);
+  transition: 
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
 }
+
+/* Visible state */
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Delays for sequential animation */
+.slide-in-right.visible:nth-child(1) { transition-delay: 0s; }
+.slide-in-right.visible:nth-child(2) { transition-delay: 0.5s; }
+.slide-in-right.visible:nth-child(3) { transition-delay: 1s; }
+
 @keyframes slideInRight {
   to {
     opacity: 1;
@@ -474,7 +562,6 @@ model-viewer{
   align-items: center;
   animation: growFromCenter 1.5s ease-out;
 }
-
 @keyframes growFromCenter {
   0% {
       transform: scale(0);
@@ -494,6 +581,30 @@ model-viewer{
   60% { transform: translateY(0); }  
   80% { transform: translateY(-5px); }  
 }
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 4s ease forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+/* Initial hidden state */
+.fade-slide-up {
+  opacity: 0;
+  transform: translateY(40px); /* Starts 40px below */
+  transition: 
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+  will-change: opacity, transform; /* Optimizes performance */
+}
+
+/* Active state when visible */
+.fade-slide-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
 @media screen and (max-width: 1600px) {
   #m-container{
     width: 1400px;
@@ -501,10 +612,21 @@ model-viewer{
 }
 @media screen and (max-width: 1440px) {
   #m-container{
+    width: 1350px;
   }
 }
 @media screen and (max-width: 1366px) {
   #m-container{
+    width: 1200px;
+  }
+  #col2{
+   margin-top: 200px;
+  }
+  #contenedor{
+    padding-top: 80px;
+  }
+  .indicators{
+    margin-top: 0px;
   }
 }
 .mobile{
@@ -588,8 +710,6 @@ model-viewer{
     display: none;
   }
   #m-container{
-    padding-left: 0;
-    padding-right: 0;
   }
   #menu{
     display: none;
@@ -602,6 +722,7 @@ model-viewer{
     justify-content: center;
     margin: 0 auto;
     width: 95%;
+    margin-top: 100px;
   }
   .img-bull{
     width: 400px;
@@ -618,7 +739,7 @@ model-viewer{
     width: 30px;
   }
   .bull{
-    top: 100px;
+    top: 130px;
     left: 80px;
   }
   .bull1{
@@ -626,7 +747,7 @@ model-viewer{
     right: 120px;
   }
   .bull2{
-    bottom: 327px;
+    bottom: 220px;
     left: 90px;
   }
   #btn{

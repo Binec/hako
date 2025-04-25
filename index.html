@@ -19,9 +19,9 @@
                     <img src="assets/hako-negativo1.svg" alt="">
                 </div>
                 <div id="menu" class="d-f-r desktop">
-                    <a href=""><p class="m-option">Conócenos</p></a>
-                    <a href=""><p class="m-option">Productos</p></a>
-                    <a href=""><p class="m-option">Contacto</p></a>
+                    <a href="#quienesomos"><p class="m-option">Conócenos</p></a>
+                    <a href="#productos"><p class="m-option">Productos</p></a>
+                    <a href="#formualrio"><p class="m-option">Contacto</p></a>
                 </div>
                 <img class="menu-button mobile" src="assets/menu.svg" alt="">
                 <div class="menu-overlay">
@@ -33,6 +33,7 @@
                 </div>
             </header>
             <div id="atf-content" class="d-f-r">
+                <div id="bg-grad"></div>
                 <div id="col1">
                     <div class="img-bull">
                         <h1 class="mobile" style="margin-bottom: 35px; font-weight: 200; font-size: 16pt;">Contenedores premium <br> y comercializadora de materias primas</h1>
@@ -85,28 +86,34 @@
             </div>
         </section>
         <section id="quienesomos">
-            <img id="bg-img" src="assets/cajas-fondo-blanco.svg" alt="">
+            <img id="bg-img" src="assets/Mask group.png" alt="">
             <img id="bg-img-mob" class="hidden" src="assets/bg-mobile.jpg" alt="">
             <div id="columns" class="d-f-r" >
                 <div id="col-1">
-                    <h1 style="font-weight: 200; font-size: 26pt;">Quiénes somos</h1>
+                    <h1 class="fade-in scroll-animate" style="font-weight: 200; font-size: 26pt;">Quiénes somos</h1>
                 </div>
                 <div id="col-2">
-                    <div>
-                        <img id="location" src="assets/icon-location.svg" alt="">
+                    <div id="bullet-naranja" class="d-f-r slide-in-right">
+                        <img id="location" src="assets/Ellipse 113.svg" alt="">
                         <p class="text-qs">Transportamos tu equipo
                             médico de punto A a B
                             con la mejor logística y cuidado</p>
-                        <img id="location" src="assets/icon-location.svg" alt="">
                     </div>
-                    <p class="text-qs">Seguridad de transporte</p>
-                    <p class="text-qs">Garantía de tiempo de entrega</p>
+                    <div id="bullet-naranja" class="d-f-r slide-in-right1">
+                        <img id="location" src="assets/Ellipse 113.svg" alt="">
+                        <p class="text-qs">Seguridad de transporte</p>
+                    </div>
+                    <div id="bullet-naranja" class="d-f-r slide-in-right2">
+                        <img id="location" src="assets/Ellipse 113.svg" alt="">
+                        <p class="text-qs">Garantía de tiempo de entrega</p>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="productos">
+            <div id="bg-gray"></div>
             <div id="contenedor">
-                <h2 style="font-weight: 200; font-size: 26pt;">Productos</h2>
+                <h2 style="font-weight: 200; font-size: 26pt; margin-bottom: 30px;">Productos</h2>
                 <div class="slider-container">
                     <div class="slides" id="slides">
                       <div class="slide">
@@ -138,39 +145,20 @@
                             <button class="leer-mas-btn" onclick="toggleText(0)">Leer más</button>
                             <div class="extra-text" id="extra-0">Este es el texto completo de la diapositiva 1. Aquí se puede mostrar más información detallada.</div>
                         </div>
-                      </div><div class="slide">
-                        <img id="img-slider" src="assets/caja2 1.jpg" alt="Slide 1">
-                        <div class="slide-text">
-                            <h2>Caja 4</h2>
-                            <h3>Lorem Ipsum</h3>
-                            <p></p>
-                            <button class="leer-mas-btn" onclick="toggleText(0)">Leer más</button>
-                            <div class="extra-text" id="extra-0">Este es el texto completo de la diapositiva 1. Aquí se puede mostrar más información detallada.</div>
-                        </div>
-                      </div><div class="slide">
-                        <img id="img-slider" src="assets/caja2 1.jpg" alt="Slide 1">
-                        <div class="slide-text">
-                            <h2>Caja 5</h2>
-                            <h3>Lorem Ipsum</h3>
-                            <p></p>
-                            <button class="leer-mas-btn" onclick="toggleText(0)">Leer más</button>
-                            <div class="extra-text" id="extra-0">Este es el texto completo de la diapositiva 1. Aquí se puede mostrar más información detallada.</div>
-                        </div>
                       </div>
                     </div>
                     <div class="indicators" id="indicators"></div>
                   </div>
-
             </div>
         </section>
         <section id="formulario">
             <div id="formu" class="d-f-r">
-                <div id="col-1" >
-                    <img id="assets-hk" width="350px" src="assets/assets@2x.png" alt="">
+                <div id="col-1"  >
+                    <img class="fade-slide-up" id="assets-hk" width="350px" src="assets/assets@2x.png" alt="">
                 </div>
                 <div class="col-2-form">
                     <h2 style="font-weight: 200; margin-bottom: 20px; font-size: 26pt;">Formulario</h2>
-                    <form id="contactForm" >
+                    <form id="contactForm" class="fade-slide-up">
                         <h3>Contáctanos</h3>
                         <p style="margin-bottom: 15px;">Llena los datos para que alguien de nuestro equipo se comunique contigo</p>
                         <div id="d-input">
@@ -196,9 +184,10 @@
             </div>
         </section>
         <footer>
+            <div id="bg-footer"></div>
             <div id="footer-content" class="d-f-r">
                 <div>
-                    <img width="180px" src="assets/hako-positivo1@2x.svg" alt="">
+                    <img width="180px" src="assets/hako-negativo1.svg" alt="">
                     <div id="legales">
                         <a href="AvisoDePrivacidad.pdf"><p>Aviso de Privcidad</p></a>
                         <a href="TerminosYCondiciones.pdf"><p>Términos y condiciones</p></a>
@@ -208,9 +197,81 @@
             </div>
             <p id="marca">HAKO x Binec® 2025</p>    
         </footer>
-
     </div>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-slide-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target); // Stop observing after triggering
+                }
+                });
+            }, {
+                threshold: 0.8, // Triggers when 15% of element is visible
+                rootMargin: '0px 0px -50px 0px' // Triggers slightly before reaching element
+            });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+            });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = [
+                document.querySelector('.slide-in-right'),
+                document.querySelector('.slide-in-right1'),
+                document.querySelector('.slide-in-right2'),
+                document.querySelector('.fade-in'),
+            ];
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Get the index of the current element
+                    const index = animateElements.indexOf(entry.target);
+                    
+                    // Add 'visible' class with appropriate delay
+                    if (index >= 0) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 500); // 0ms, 500ms, 1000ms delays
+                    }
+                }
+                });
+            }, {
+                threshold: 0.2, // Trigger when 50% of element is visible
+                rootMargin: '0px 0px -100px 0px' // Adjust trigger point slightly earlier
+            });
+            animateElements.forEach(element => {
+                if (element) observer.observe(element);
+            });
+            });
+            document.addEventListener('DOMContentLoaded', function() {
+            const bullets = document.querySelectorAll('.slide-in-right');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add visible class to container
+                    entry.target.classList.add('visible');
+                    
+                    // Optional: Stop observing after animation
+                    observer.unobserve(entry.target);
+                }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe each bullet
+            bullets.forEach(bullet => {
+                observer.observe(bullet);
+            });
+            });
         const triggers = document.querySelectorAll(".trigger");
         let lockedTrigger = null;
         triggers.forEach(trigger => {
@@ -341,6 +402,33 @@
                 menuOverlay.classList.remove('active');
             }
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const fadeElements = document.querySelectorAll('.slide-in-right');
+        
+        function checkVisibility() {
+            fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            
+            // Check if element is in viewport (with some threshold)
+            if (elementTop < window.innerHeight * 0.9 && elementBottom > 0) {
+                element.classList.add('is-visible');
+            }
+            });
+        }
+        
+        // Initial check
+        checkVisibility();
+        
+        // Check on scroll
+        window.addEventListener('scroll', checkVisibility);
+        });
+
+            const fadeElements = document.querySelectorAll('.fade-in-on-scroll');
+            fadeElements.forEach(element => {
+                element.classList.add('fade-in');
+            });
       </script>
 </body>
 </html>
