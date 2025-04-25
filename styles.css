@@ -704,13 +704,20 @@ model-viewer{
     overflow: hidden;
 
   }
+  header{
+    justify-content: center;
+  }
+  .logo{
+    width: 180px;
+  }
   .mobile{
     display: block;
   }
-  .desktop{
+  .hide{
     display: none;
   }
-  #m-container{
+  .desktop{
+    display: none;
   }
   #menu{
     display: none;
