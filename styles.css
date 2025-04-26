@@ -309,6 +309,15 @@ input{
     padding-left: 10px;
     width: 15px;
 }
+input #message::placeholder {
+  line-height: 200px;
+}
+#input-icon-message{
+    position: absolute;
+    padding-top: 42px;
+    padding-left: 10px;
+    width: 15px;
+}
 #btn-enviar{
     background-color: #EC6F43;
     width: 100%;
