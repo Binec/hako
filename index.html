@@ -38,7 +38,6 @@
                     <div class="img-bull">
                         <h1 class="mobile" style="margin-bottom: 35px; font-weight: 200; font-size: 16pt;">Contenedores premium <br> y comercializadora de materias primas</h1>
                         <img class="slide-up" id="caja" width="300px" src="assets/caja1.png" alt="">
-            
                         <div id="bullet" class="bull animated-div">
                             <div id="circle" class="trigger">
                                 <div id="circle2"></div>
@@ -82,6 +81,31 @@
                             <img class="bounce-animation" id="arrow-icon" src="assets/arrow-down-white.svg" alt="">
                         </div>
                     </a>
+                </div>
+            </div>
+        </section>
+        <section id="3d">
+            <div id="columnas">
+                <div id="columna-1">
+
+                </div>
+                <div id="columna-2">
+                    <h1 class="fade-in scroll-animate" style="font-weight: 200; font-size: 26pt;">Contenedor 3D</h1>
+                    <model-viewer id="animation-demo" autoplay ar ar-modes="webxr" scale="0.08 0.08 0.08" camera-orbit="140deg auto auto" shadow-intensity="1" camera-controls touch-action="pan-y" src="assets/Weapon box.glb" alt="A 3D model of a horse galloping.">
+                        <div slot="hotspot-nose" class="anchor" data-surface="0 0 228 113 111 0.217 0.341 0.442"></div>
+                        <div slot="hotspot-hoof" class="anchor" data-surface="0 0 752 733 735 0.132 0.379 0.489"></div>
+                        <div slot="hotspot-tail" class="anchor" data-surface="0 0 220 221 222 0.405 0.061 0.534"></div>
+                        <svg id="lines" width="150%" height="150%" xmlns="http://www.w3.org/2000/svg" class="lineContainer">
+                        <line class="line"></line>
+                        <line class="line"></line>
+                        <line class="line"></line>
+                        </svg>
+                        <div id="container">
+                        <button id="nose" class="label">Protección</button>
+                        <button id="hoof" class="label">Seguridad</button>
+                        <button id="tail" class="label">Calidad</button>
+                        </div>
+                    </model-viewer>
                 </div>
             </div>
         </section>
@@ -201,7 +225,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const fadeElements = document.querySelectorAll('.fade-slide-up');
-            
+    
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -380,7 +404,6 @@
                 mensajeArea.style.color = "red";
             }
         }
-        
         const menuButton = document.querySelector('.menu-button');
         const menuOverlay = document.querySelector('.menu-overlay');
         
