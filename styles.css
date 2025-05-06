@@ -440,6 +440,18 @@ footer{
 .mobile{
   display: none;
 }
+#threed{
+  text-justify: center;
+  margin: auto 0;
+  display: flex;
+}
+#columnas{
+  margin: auto 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 model-viewer{
   height: 400px;
   width: 400px;
@@ -474,7 +486,6 @@ model-viewer{
   display: block;
   font-size: 18px;
   font-weight: 700;
-  
   padding: 0.5em 1em;
   bottom: 10px;
   pointer-events: none;
@@ -511,14 +522,12 @@ model-viewer{
     opacity 1s ease,
     transform 1s ease;
 }
-
 /* When visible */
 .slide-in-right.visible {
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.s;
 }
-
 .slide-in-right1.visible {
   opacity: 1;
   transform: translateX(0);
