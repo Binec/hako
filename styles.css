@@ -255,7 +255,7 @@ header{
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding-top: 200px;
+  padding-top: 50px;
 }
 #col-1{
     width: 50%;
