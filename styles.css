@@ -622,6 +622,9 @@ model-viewer{
   opacity: 1;
   transform: translateY(0);
 }
+#testimonios{
+  height: 400px;
+}
 /*SLIDER2*/
 .slider-container2 {
   position: relative;
@@ -647,9 +650,10 @@ model-viewer{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
-  color: white;
+  font-size: 2rem;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
 }
 
 .slide-two.active {
