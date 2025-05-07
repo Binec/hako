@@ -622,6 +622,63 @@ model-viewer{
   opacity: 1;
   transform: translateY(0);
 }
+/*SLIDER2*/
+.slider-container2 {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 400px;
+}
+
+.slider2 {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide-two {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+}
+
+.slide-two.active {
+  opacity: 1;
+}
+
+.slide-two:nth-child(1) {
+  
+}
+
+.slide-two:nth-child(2) {
+  
+}
+
+.slide-two:nth-child(3) {
+  
+}
+
+.slider-controls2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.slider-controls2 button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1600px) {
   #m-container{
     width: 1400px;

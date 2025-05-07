@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <div id="col2" class="desktop">
-                    <h1 class="desktop slide-in-right">Diseñadores de contenedores premium <br> y comercializadora de materias primas</h1>
+                    <h1 class="desktop slide-in-right">Comercializadora de insumos médicos y más...</h1>
                     <a href="#formulario">
                         <div id="btn" class="btn-1 d-f-r">
                             <p>Contáctanos</p>
@@ -172,6 +172,26 @@
                   </div>
             </div>
         </section>
+        <section id="testimonios">
+            <div class="slider-container2">
+                <div class="slider2">
+                    <div class="slide-two active">
+                        <q>"Testimonio de cliente No 1. <br><b>Cliente 1</b></q>
+                    </div>
+                    <div class="slide-two">
+                        <q>"Testimonio de cliente No 2. <br><b>Cliente 2</b></q>
+                    </div>
+                    <div class="slide-two">
+                        <q>"Testimonio de cliente No 3. <br><b>Cliente 3</b></q>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-controls2">
+                <button id="prevBtn">Previous</button>
+                <button id="nextBtn">Next</button>
+            </div>
+        </section>
         <section id="formulario">
             <div id="formu" class="d-f-r">
                 <div id="col-1"  >
@@ -220,6 +240,8 @@
         </footer>
     </div>
     <script>
+        
+
         document.addEventListener('DOMContentLoaded', function() {
             const fadeElements = document.querySelectorAll('.fade-slide-up');
     
@@ -449,6 +471,84 @@
             fadeElements.forEach(element => {
                 element.classList.add('fade-in');
             });
+
+            document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide-two');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+            let slideInterval;
+            const slideDuration = 5000; // 5 seconds
+            
+            // Initialize the slider
+            function initSlider() {
+                // Hide all slides except the first one
+                slides.forEach((slide, index) => {
+                    slide.classList.remove('active');
+                });
+                slides[0].classList.add('active');
+                
+                // Start the automatic sliding
+                startSlideInterval();
+                
+                // Add event listeners for manual controls
+                prevBtn.addEventListener('click', prevSlide);
+                nextBtn.addEventListener('click', nextSlide);
+                
+                // Pause on hover
+                const sliderContainer = document.querySelector('.slider-container2');
+                sliderContainer.addEventListener('mouseenter', pauseSlides);
+                sliderContainer.addEventListener('mouseleave', startSlideInterval);
+            }
+            
+            // Show next slide
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+            
+            // Show previous slide
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+            
+            // Go to specific slide
+            function goToSlide(n) {
+                // Reset all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Calculate the correct slide index (with wrap-around)
+                currentSlide = (n + slides.length) % slides.length;
+                
+                // Show the new slide
+                slides[currentSlide].classList.add('active');
+                
+                // Reset the timer
+                resetSlideInterval();
+            }
+            
+            // Start automatic sliding
+            function startSlideInterval() {
+                slideInterval = setInterval(nextSlide, slideDuration);
+            }
+            
+            // Pause automatic sliding
+            function pauseSlides() {
+                clearInterval(slideInterval);
+            }
+            
+            // Reset the interval timer
+            function resetSlideInterval() {
+                pauseSlides();
+                startSlideInterval();
+            }
+            
+            // Initialize the slider when the page loads
+            initSlider();
+        });
+
+
       </script>
 </body>
 </html>
